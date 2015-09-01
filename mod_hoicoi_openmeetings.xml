@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.6" method="upgrade">
+	<name>mod_hoicoi_openmeetings</name>
+	<creationDate>2015-09-01</creationDate>
+	<author>Jibon Lawrence Costa</author>
+	<authorEmail>jiboncosta57@gmail.com</authorEmail>
+	<authorUrl>http://extensions.hoicoimasti.com/</authorUrl>
+	<copyright>Copyright (C) 2015 Jibon Lawrence Costa Open Source Matters. All rights reserved.</copyright>	
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>1</version>
+	<description>Openmeetings server integration with Joomla</description>
+	<files>
+		<filename module="mod_hoicoi_openmeetings">mod_hoicoi_openmeetings.php</filename>
+		<folder>tmpl</folder>
+		<folder>fields</folder>
+		<folder>classes</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_hoicoi_openmeetings.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB.mod_hoicoi_openmeetings.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="protocol" type="text" default="http" label="Protocol (http or https)" description="Protocol (http or https)" />
+				<field name="host" type="text" default="" label="Host" description="Openmeetings server host address. Without http or https" />
+				<field name="port" type="text" default="5080" label="Server Port" description="Openmeetings server port. Default 5080" />
+				<field name="webappname" type="text" default="openmeetings" label="Web App Name" description="Openmeetings Web App Name" />
+				<field name="adminUser" type="text" default="" label="Admin Username" description="One admin username who has SOAP privilege" />
+				<field name="adminPass" type="password" default="" label="Admin Password" description="Admin password" />
+			</fieldset>
+			
+			<fieldset addfieldpath="/modules/mod_hoicoi_openmeetings/fields" name="rooms" label="Conference Rooms">
+				 <field  description=""  label="Conference Room Information" name="rooms" type="Rooms" />
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+			</fieldset>
+		</fields>
+	</config>			
+</extension>
